@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Khumanpar Village</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f5ed;color:#263126}
+nav{position:sticky;top:0;z-index:5;background:#183b24;padding:14px;text-align:center}nav a,nav button{color:#fff;background:none;border:0;text-decoration:none;margin:0 10px;font-weight:bold;cursor:pointer}
+.hero{min-height:75vh;display:grid;place-items:center;text-align:center;padding:30px 20px;background:linear-gradient(#183b2488,#183b24aa),var(--hero) center/cover;color:#fff}
+.hero-inner{max-width:850px}.hero h1{font-size:clamp(3rem,8vw,6rem);margin:10px}.hero p{font-size:1.2rem}.btn{display:inline-block;margin-top:20px;padding:12px 22px;background:#d6a84f;color:#172218;border-radius:30px;text-decoration:none;font-weight:bold}
+section{max-width:1100px;margin:auto;padding:65px 20px}.title{text-align:center;color:#214b2d;font-size:2.3rem}.sub{text-align:center;color:#65705f;margin-bottom:35px}
+.card{background:white;border-radius:18px;padding:28px;box-shadow:0 8px 25px #1e372310}.about{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:15px}.stat{text-align:center;padding:22px;background:#eef2e7;border-radius:15px}.stat b{display:block;font-size:2rem;color:#b2832f}
+.features,.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.feature{overflow:hidden;background:#fff;border-radius:18px;box-shadow:0 8px 25px #1e372310}.feature img{width:100%;height:180px;object-fit:cover;background:#dfe6d8}.feature-body{padding:20px}.feature h3{margin-top:0;color:#214b2d}
+.quote{background:#214b2d;color:white;text-align:center;max-width:none;padding:65px 20px}.quote p{font-size:1.6rem}
+footer{background:#102718;color:#dfe8db;text-align:center;padding:25px}
+#editor{display:none;position:fixed;inset:0;background:#f7f5ed;z-index:20;overflow:auto;padding:25px}.panel{max-width:900px;margin:auto}.editbox{background:#fff;padding:20px;border-radius:16px;margin:15px 0;box-shadow:0 5px 18px #00000012}.editbox label{display:block;font-weight:bold;margin:10px 0 5px}.editbox input,.editbox textarea{width:100%;padding:11px;border:1px solid #ccd3c7;border-radius:8px;font:inherit}.editbox textarea{min-height:90px}.photo{display:grid;grid-template-columns:120px 1fr;gap:15px;align-items:center}.photo img{width:120px;height:80px;object-fit:cover;border-radius:10px;background:#ddd}.actions{position:sticky;top:0;background:#f7f5ed;padding:10px 0;z-index:2}.actions button{padding:11px 17px;border:0;border-radius:9px;cursor:pointer;font-weight:bold;margin-right:8px}.save{background:#214b2d;color:#fff}.close{background:#ddd}
+@media(max-width:800px){.about,.features{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.photo{grid-template-columns:80px 1fr}.photo img{width:80px;height:65px}}@media(max-width:520px){.about,.features,.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#home">Home</a><a href="#about">About</a><a href="#beauty">Village Beauty</a><a href="#gallery">Gallery</a>
+<button onclick="openEditor()">✏️ Edit Website</button>
+</nav>
+
+<header class="hero" id="home">
+<div class="hero-inner">
+<div class="badge">Dungarpur, Rajasthan</div>
+<h1 id="villageName">Khumanpar</h1>
+<p id="heroText">A small and beautiful village surrounded by greenery, a peaceful talab, mountains and a beautiful temple.</p>
+<a class="btn" href="#about">Discover Our Village</a>
+</div>
+</header>
+
+<section id="about">
+<h2 class="title">About Khumanpar</h2>
+<p class="sub">A close-knit village with a proud heritage and peaceful natural surroundings.</p>
+<div class="about">
+<div class="card"><p id="aboutText">Khumanpar is a beautiful village in Dungarpur district. Around 120 people live here in approximately 25 homes. The village is home to a Rajput community and is surrounded by greenery, mountains and the calm waters of its talab.</p><p>Its peaceful atmosphere, natural beauty and beautiful temple make Khumanpar a special place for the people who call it home.</p></div>
+<div class="stats"><div class="stat"><b id="population">120</b>People</div><div class="stat"><b id="homes">25</b>Homes</div><div class="stat"><b>🌿</b>Greenery</div><div class="stat"><b>🏔️</b>Mountains</div></div>
+</div>
+</section>
+
+<section id="beauty">
+<h2 class="title">The Beauty of Khumanpar</h2><p class="sub">Simple surroundings, beautiful memories.</p>
+<div class="features" id="features"></div>
+</section>
+
+<div class="quote"><p id="quote">“Khumanpar — small in size, rich in nature, heritage and memories.”</p></div>
+
+<section id="gallery"><h2 class="title">Village Gallery</h2><p class="sub">Add your own Khumanpar photographs using Edit Website.</p><div class="gallery" id="galleryGrid"></div></section>
+<footer>© <span id="year">2026</span> Khumanpar Village • Dungarpur, Rajasthan<br>Made with love for the village and its people.</footer>
+
+<div id="editor">
+<div class="panel">
+<div class="actions"><button class="save" onclick="saveSite()">Save Changes</button><button class="close" onclick="closeEditor()">Close</button><button onclick="resetSite()">Reset</button></div>
+<h1>Edit Khumanpar Website</h1>
+<p>You do not need to edit HTML. Change the text, choose photos from your computer, then click <b>Save Changes</b>. Your changes stay saved in this browser.</p>
+
+<div class="editbox"><label>Village name</label><input id="eName">
+<label>Homepage description</label><textarea id="eHero"></textarea>
+<label>About the village</label><textarea id="eAbout"></textarea>
+<label>Population</label><input id="ePop" type="number">
+<label>Number of homes</label><input id="eHomes" type="number">
+<label>Village quote</label><input id="eQuote"></div>
+
+<div class="editbox"><h2>Village Beauty Photos & Text</h2><div id="featureEditor"></div></div>
+<div class="editbox"><h2>Gallery Photos</h2><div id="galleryEditor"></div><button onclick="addGallery()">＋ Add Gallery Photo</button></div>
+</div></div>
+
+<script>
+const defaults={
+name:"Khumanpar",hero:"A small and beautiful village surrounded by greenery, a peaceful talab, mountains and a beautiful temple.",
+about:"Khumanpar is a beautiful village in Dungarpur district. Around 120 people live here in approximately 25 homes. The village is home to a Rajput community and is surrounded by greenery, mountains and the calm waters of its talab.",
+pop:"120",homes:"25",quote:"“Khumanpar — small in size, rich in nature, heritage and memories.”",
+features:[
+["Village Greenery","Fresh natural surroundings add beauty and peace to village life.","🌿"],
+["Khumanpar Talab","The village talab is one of the peaceful natural features of Khumanpar.","💧"],
+["Mountains","Beautiful hills and mountain views surround the village landscape.","🏔️"],
+["Village Temple","A beautiful temple stands as an important part of village life and heritage.","🛕"]
+],gallery:[]
+};
+let data=JSON.parse(localStorage.getItem("khumanparSite")||"null")||structuredClone(defaults);
+const $=id=>document.getElementById(id);
+function render(){
+$("villageName").textContent=data.name;$("heroText").textContent=data.hero;$("aboutText").textContent=data.about;
+$("population").textContent=data.pop;$("homes").textContent=data.homes;$("quote").textContent=data.quote;
+$("year").textContent=new Date().getFullYear();
+const f=$("features");f.innerHTML="";
+data.features.forEach((x,i)=>{let d=document.createElement("div");d.className="feature";d.innerHTML=`<img src="${x[3]||''}" onerror="this.style.display='none'"><div class="feature-body"><h3>${x[2]} ${x[0]}</h3><p>${x[1]}</p></div>`;f.appendChild(d)});
+const g=$("galleryGrid");g.innerHTML="";data.gallery.forEach(src=>{let d=document.createElement("div");d.className="feature";d.innerHTML=`<img src="${src}" style="width:100%;height:220px;object-fit:cover">`;g.appendChild(d)});
+}
+function openEditor(){
+$("eName").value=data.name;$("eHero").value=data.hero;$("eAbout").value=data.about;$("ePop").value=data.pop;$("eHomes").value=data.homes;$("eQuote").value=data.quote;
+const fe=$("featureEditor");fe.innerHTML="";
+data.features.forEach((x,i)=>{fe.insertAdjacentHTML("beforeend",`<div class="editbox"><label>Title</label><input data-f="${i}" data-k="0" value="${esc(x[0])}"><label>Description</label><textarea data-f="${i}" data-k="1">${esc(x[1])}</textarea><label>Photo</label><div class="photo"><img id="fp${i}" src="${x[3]||''}"><input type="file" accept="image/*" onchange="photoFeature(${i},this)"></div></div>`)});
+renderGalleryEditor();$("editor").style.display="block";
+}
+function renderGalleryEditor(){const ge=$("galleryEditor");ge.innerHTML="";data.gallery.forEach((src,i)=>ge.insertAdjacentHTML("beforeend",`<div class="photo editbox"><img src="${src}"><div><input type="file" accept="image/*" onchange="photoGallery(${i},this)"><button onclick="removeGallery(${i})">Remove</button></div></div>`))}
+function esc(s){return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;")}
+function photoFeature(i,input){const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{data.features[i][3]=r.result;$("fp"+i).src=r.result};r.readAsDataURL(file)}
+function photoGallery(i,input){const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{data.gallery[i]=r.result;renderGalleryEditor()};r.readAsDataURL(file)}
+function addGallery(){data.gallery.push("");renderGalleryEditor()}
+function removeGallery(i){data.gallery.splice(i,1);renderGalleryEditor()}
+function saveSite(){
+data.name=$("eName").value;data.hero=$("eHero").value;data.about=$("eAbout").value;data.pop=$("ePop").value;data.homes=$("eHomes").value;data.quote=$("eQuote").value;
+document.querySelectorAll("[data-f]").forEach(el=>data.features[+el.dataset.f][+el.dataset.k]=el.value);
+localStorage.setItem("khumanparSite",JSON.stringify(data));render();closeEditor();alert("Changes saved on this browser.");
+}
+function closeEditor(){$("editor").style.display="none"}
+function resetSite(){if(confirm("Reset the website to the original version?")){data=structuredClone(defaults);localStorage.setItem("khumanparSite",JSON.stringify(data));render();openEditor()}}
+render();
+</script>
+</body>
+</html>
