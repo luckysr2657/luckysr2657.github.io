@@ -1,702 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Khumanpur Village | Aspur, Dungarpur, Rajasthan</title>
-
-  <meta name="description"
-        content="Official village information website for Khumanpur, Aspur, Dungarpur, Rajasthan. Explore village life, nature, photos and location.">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #24352b;
-      background: #f7f5ed;
-    }
-
-    /* NAVIGATION */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #123d2a;
-      padding: 14px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-    }
-
-    .logo {
-      color: white;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-links a:hover {
-      color: #f2c15b;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 50px 20px;
-
-      background:
-        linear-gradient(rgba(10,55,35,0.75), rgba(10,55,35,0.75)),
-        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      color: white;
-    }
-
-    .location-badge {
-      display: inline-block;
-      background: #f0b94f;
-      color: #173725;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 9vw, 6.5rem);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .hero-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 25px;
-      background: #f0b94f;
-      color: #173725;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .hero-button:hover {
-      background: #ffd36b;
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 80px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #155333;
-      margin-bottom: 12px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #66766c;
-      max-width: 750px;
-      margin: 0 auto 45px;
-      font-size: 1.1rem;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #fffdf7;
-    }
-
-    .about-container {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    }
-
-    .about-text h3 {
-      font-size: 2rem;
-      color: #155333;
-      margin-bottom: 15px;
-    }
-
-    .about-text p {
-      margin-bottom: 15px;
-      color: #526259;
-    }
-
-    /* HIGHLIGHTS */
-
-    .highlights {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .highlight-card {
-      background: white;
-      padding: 30px 20px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .highlight-card .icon {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-
-    .highlight-card h3 {
-      color: #155333;
-      margin-bottom: 8px;
-    }
-
-    /* GALLERY */
-
-    .gallery {
-      background: #edf3eb;
-    }
-
-    .gallery-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .gallery-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .gallery-card p {
-      padding: 15px;
-      text-align: center;
-      font-weight: bold;
-      color: #155333;
-    }
-
-    /* LOCATION */
-
-    .location-container {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .location-box {
-      background: white;
-      padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .location-box h3 {
-      font-size: 2rem;
-      color: #155333;
-      margin-bottom: 15px;
-    }
-
-    .location-box p {
-      margin-bottom: 20px;
-      color: #5d6b62;
-    }
-
-    .map-button {
-      display: inline-block;
-      background: #155333;
-      color: white;
-      padding: 13px 22px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .map-button:hover {
-      background: #207447;
-    }
-
-    /* INFORMATION */
-
-    .info {
-      background: #fffdf7;
-    }
-
-    .info-grid {
-      max-width: 1000px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .info-card {
-      background: #f0f5ee;
-      padding: 25px;
-      border-radius: 12px;
-    }
-
-    .info-card strong {
-      color: #155333;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #123d2a;
-      color: white;
-      text-align: center;
-    }
-
-    .contact .section-title {
-      color: white;
-    }
-
-    .contact p {
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #09291c;
-      color: #cddbd2;
-      text-align: center;
-      padding: 25px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .about-container {
-        grid-template-columns: 1fr;
-      }
-
-      .highlights {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 80vh;
-      }
-
-      section {
-        padding: 60px 5%;
-      }
-    }
-/* GALLERY IMAGE SIZE */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.gallery-card {
-    width: 100%;
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    background: #eee;
-    display: block;
-    border-radius: 12px;
-}
-
-@media (max-width: 800px) {
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-card img {
-        height: 220px;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Khumanpar Village</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f5ed;color:#263126}
+nav{position:sticky;top:0;z-index:5;background:#183b24;padding:14px;text-align:center}nav a,nav button{color:#fff;background:none;border:0;text-decoration:none;margin:0 10px;font-weight:bold;cursor:pointer}
+.hero{min-height:75vh;display:grid;place-items:center;text-align:center;padding:30px 20px;background:linear-gradient(#183b2488,#183b24aa),var(--hero) center/cover;color:#fff}
+.hero-inner{max-width:850px}.hero h1{font-size:clamp(3rem,8vw,6rem);margin:10px}.hero p{font-size:1.2rem}.btn{display:inline-block;margin-top:20px;padding:12px 22px;background:#d6a84f;color:#172218;border-radius:30px;text-decoration:none;font-weight:bold}
+section{max-width:1100px;margin:auto;padding:65px 20px}.title{text-align:center;color:#214b2d;font-size:2.3rem}.sub{text-align:center;color:#65705f;margin-bottom:35px}
+.card{background:white;border-radius:18px;padding:28px;box-shadow:0 8px 25px #1e372310}.about{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:15px}.stat{text-align:center;padding:22px;background:#eef2e7;border-radius:15px}.stat b{display:block;font-size:2rem;color:#b2832f}
+.features,.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.feature{overflow:hidden;background:#fff;border-radius:18px;box-shadow:0 8px 25px #1e372310}.feature img{width:100%;height:180px;object-fit:cover;background:#dfe6d8}.feature-body{padding:20px}.feature h3{margin-top:0;color:#214b2d}
+.quote{background:#214b2d;color:white;text-align:center;max-width:none;padding:65px 20px}.quote p{font-size:1.6rem}
+footer{background:#102718;color:#dfe8db;text-align:center;padding:25px}
+#editor{display:none;position:fixed;inset:0;background:#f7f5ed;z-index:20;overflow:auto;padding:25px}.panel{max-width:900px;margin:auto}.editbox{background:#fff;padding:20px;border-radius:16px;margin:15px 0;box-shadow:0 5px 18px #00000012}.editbox label{display:block;font-weight:bold;margin:10px 0 5px}.editbox input,.editbox textarea{width:100%;padding:11px;border:1px solid #ccd3c7;border-radius:8px;font:inherit}.editbox textarea{min-height:90px}.photo{display:grid;grid-template-columns:120px 1fr;gap:15px;align-items:center}.photo img{width:120px;height:80px;object-fit:cover;border-radius:10px;background:#ddd}.actions{position:sticky;top:0;background:#f7f5ed;padding:10px 0;z-index:2}.actions button{padding:11px 17px;border:0;border-radius:9px;cursor:pointer;font-weight:bold;margin-right:8px}.save{background:#214b2d;color:#fff}.close{background:#ddd}
+@media(max-width:800px){.about,.features{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.photo{grid-template-columns:80px 1fr}.photo img{width:80px;height:65px}}@media(max-width:520px){.about,.features,.stats{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
 
-  <!-- NAVIGATION -->
+<nav>
+<a href="#home">Home</a><a href="#about">About</a><a href="#beauty">Village Beauty</a><a href="#gallery">Gallery</a>
+<button onclick="openEditor()">✏️ Edit Website</button>
+</nav>
 
-  <nav>
-    <a href="#home" class="logo">Khumanpur</a>
-
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Photos</a></li>
-      <li><a href="#location">Location</a></li>
-      <li><a href="#info">Information</a></li>
-    </ul>
-  </nav>
-
-
-  <!-- HERO -->
-
-  <header class="hero" id="home">
-
-    <div class="hero-content">
-
-      <div class="location-badge">
-        Aspur, Dungarpur, Rajasthan
-      </div>
-
-      <h1>Khumanpur</h1>
-
-      <p>
-        Welcome to Khumanpur — a village surrounded by the natural beauty,
-        culture and peaceful rural life of Rajasthan.
-      </p>
-
-      <a href="#about" class="hero-button">
-        Explore Khumanpur
-      </a>
-
-    </div>
-
-  </header>
-
-
-  <!-- ABOUT -->
-
-  <section class="about" id="about">
-
-    <h2 class="section-title">
-      About Khumanpur
-    </h2>
-
-    <p class="section-subtitle">
-      Discover the village, its people, surroundings and way of life.
-    </p>
-
-    <div class="about-container">
-
-      <img
-        class="about-image"
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
-        alt="Village landscape">
-
-      <div class="about-text">
-
-        <h3>Our Village</h3>
-
-        <p>
-          Khumanpur is a village in the Aspur area of Dungarpur district
-          in Rajasthan, India.
-        </p>
-
-        <p>
-          This website is created to share information about Khumanpur,
-          showcase village life and provide a place where residents,
-          visitors and people from the village community can learn more
-          about their home.
-        </p>
-
-        <p>
-          More local information, history and photographs can be added
-          here as the website grows.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- HIGHLIGHTS -->
-
-  <section>
-
-    <h2 class="section-title">
-      Village Highlights
-    </h2>
-
-    <p class="section-subtitle">
-      Some of the things that make village life special.
-    </p>
-
-    <div class="highlights">
-
-      <div class="highlight-card">
-        <div class="icon">🌳</div>
-        <h3>Nature</h3>
-        <p>
-          Enjoy the greenery and peaceful surroundings of rural Rajasthan.
-        </p>
-      </div>
-
-      <div class="highlight-card">
-        <div class="icon">🏘️</div>
-        <h3>Village Life</h3>
-        <p>
-          Experience the simple and welcoming character of village life.
-        </p>
-      </div>
-
-      <div class="highlight-card">
-        <div class="icon">🤝</div>
-        <h3>Community</h3>
-        <p>
-          A place where families, neighbours and traditions bring people together.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- GALLERY -->
-
-  <section class="gallery" id="gallery">
-
-    <h2 class="section-title">
-      Khumanpur Photos
-    </h2>
-
-    <p class="section-subtitle">
-      Real photographs of Khumanpur can be added here.
-    </p>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-card">
-        <img
-          src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
-          alt="Khumanpur village view">
-        <p>Village View</p>
-      </div>
-
-      <div class="gallery-card">
-        <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=85"
-          alt="Natural landscape">
-        <p>Nature & Landscape</p>
-      </div>
-
-     <div class="card">
-  <img src="khumanpur-community.jpg.jpeg" alt="Khumanpur village community">
-  <h3>Khumanpur Village Community</h3>
-  <p>A beautiful gathering of the Khumanpur village community.</p>
+<header class="hero" id="home">
+<div class="hero-inner">
+<div class="badge">Dungarpur, Rajasthan</div>
+<h1 id="villageName">Khumanpar</h1>
+<p id="heroText">A small and beautiful village surrounded by greenery, a peaceful talab, mountains and a beautiful temple.</p>
+<a class="btn" href="#about">Discover Our Village</a>
 </div>
-        <img
-          src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=85"
-          alt="Village surroundings">
-        <p>Village Photos</p>
-      </div>
+</header>
 
-    </div>
-
-  </section>
-
-
-  <!-- LOCATION -->
-
-  <section id="location">
-
-    <h2 class="section-title">
-      Where is Khumanpur?
-    </h2>
-
-    <p class="section-subtitle">
-      Khumanpur is associated with the Aspur area of Dungarpur district,
-      Rajasthan.
-    </p>
-
-    <div class="location-container">
-
-      <div class="location-box">
-
-        <h3>📍 Khumanpur, Aspur</h3>
-
-        <p>
-          Dungarpur District, Rajasthan, India
-        </p>
-
-        <a
-          class="map-button"
-          href="https://www.google.com/maps/search/?api=1&query=Khumanpur%2C%20Aspur%2C%20Dungarpur%2C%20Rajasthan"
-          target="_blank"
-          rel="noopener">
-          Open Khumanpur on Google Maps
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- INFORMATION -->
-
-  <section class="info" id="info">
-
-    <h2 class="section-title">
-      Village Information
-    </h2>
-
-    <p class="section-subtitle">
-      Important information can be added here as it is verified.
-    </p>
-
-    <div class="info-grid">
-
-      <div class="info-card">
-        <strong>Village:</strong><br>
-        Khumanpur
-      </div>
-
-      <div class="info-card">
-        <strong>Area:</strong><br>
-        Aspur
-      </div>
-
-      <div class="info-card">
-        <strong>District:</strong><br>
-        Dungarpur
-      </div>
-
-      <div class="info-card">
-        <strong>State:</strong><br>
-        Rajasthan
-      </div>
-
-      <div class="info-card">
-        <strong>Country:</strong><br>
-        India
-      </div>
-
-      <div class="info-card">
-        <strong>More information:</strong><br>
-        Coming soon
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section class="contact">
-
-    <h2 class="section-title">
-      About This Website
-    </h2>
-
-    <p>
-      This website is dedicated to sharing information, photographs,
-      culture and village life of Khumanpur.
-      More information will be added as the website developer Lokendra Singh Rathod.
-    </p>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>
-      © 2026 Khumanpur Village Website
-    </p>
-
-    <p>
-      Khumanpur · Aspur · Dungarpur · Rajasthan
-    </p>
-
-  </footer>
-<div class="card">
-   
+<section id="about">
+<h2 class="title">About Khumanpar</h2>
+<p class="sub">A close-knit village with a proud heritage and peaceful natural surroundings.</p>
+<div class="about">
+<div class="card"><p id="aboutText">Khumanpar is a beautiful village in Dungarpur district. Around 120 people live here in approximately 25 homes. The village is home to a Rajput community and is surrounded by greenery, mountains and the calm waters of its talab.</p><p>Its peaceful atmosphere, natural beauty and beautiful temple make Khumanpar a special place for the people who call it home.</p></div>
+<div class="stats"><div class="stat"><b id="population">120</b>People</div><div class="stat"><b id="homes">25</b>Homes</div><div class="stat"><b>🌿</b>Greenery</div><div class="stat"><b>🏔️</b>Mountains</div></div>
 </div>
+</section>
+
+<section id="beauty">
+<h2 class="title">The Beauty of Khumanpar</h2><p class="sub">Simple surroundings, beautiful memories.</p>
+<div class="features" id="features"></div>
+</section>
+
+<div class="quote"><p id="quote">“Khumanpar — small in size, rich in nature, heritage and memories.”</p></div>
+
+<section id="gallery"><h2 class="title">Village Gallery</h2><p class="sub">Add your own Khumanpar photographs using Edit Website.</p><div class="gallery" id="galleryGrid"></div></section>
+<footer>© <span id="year">2026</span> Khumanpar Village • Dungarpur, Rajasthan<br>Made with love for the village and its people.</footer>
+
+<div id="editor">
+<div class="panel">
+<div class="actions"><button class="save" onclick="saveSite()">Save Changes</button><button class="close" onclick="closeEditor()">Close</button><button onclick="resetSite()">Reset</button></div>
+<h1>Edit Khumanpar Website</h1>
+<p>You do not need to edit HTML. Change the text, choose photos from your computer, then click <b>Save Changes</b>. Your changes stay saved in this browser.</p>
+
+<div class="editbox"><label>Village name</label><input id="eName">
+<label>Homepage description</label><textarea id="eHero"></textarea>
+<label>About the village</label><textarea id="eAbout"></textarea>
+<label>Population</label><input id="ePop" type="number">
+<label>Number of homes</label><input id="eHomes" type="number">
+<label>Village quote</label><input id="eQuote"></div>
+
+<div class="editbox"><h2>Village Beauty Photos & Text</h2><div id="featureEditor"></div></div>
+<div class="editbox"><h2>Gallery Photos</h2><div id="galleryEditor"></div><button onclick="addGallery()">＋ Add Gallery Photo</button></div>
+</div></div>
+
+<script>
+const defaults={
+name:"Khumanpar",hero:"A small and beautiful village surrounded by greenery, a peaceful talab, mountains and a beautiful temple.",
+about:"Khumanpar is a beautiful village in Dungarpur district. Around 120 people live here in approximately 25 homes. The village is home to a Rajput community and is surrounded by greenery, mountains and the calm waters of its talab.",
+pop:"120",homes:"25",quote:"“Khumanpar — small in size, rich in nature, heritage and memories.”",
+features:[
+["Village Greenery","Fresh natural surroundings add beauty and peace to village life.","🌿"],
+["Khumanpar Talab","The village talab is one of the peaceful natural features of Khumanpar.","💧"],
+["Mountains","Beautiful hills and mountain views surround the village landscape.","🏔️"],
+["Village Temple","A beautiful temple stands as an important part of village life and heritage.","🛕"]
+],gallery:[]
+};
+let data=JSON.parse(localStorage.getItem("khumanparSite")||"null")||structuredClone(defaults);
+const $=id=>document.getElementById(id);
+function render(){
+$("villageName").textContent=data.name;$("heroText").textContent=data.hero;$("aboutText").textContent=data.about;
+$("population").textContent=data.pop;$("homes").textContent=data.homes;$("quote").textContent=data.quote;
+$("year").textContent=new Date().getFullYear();
+const f=$("features");f.innerHTML="";
+data.features.forEach((x,i)=>{let d=document.createElement("div");d.className="feature";d.innerHTML=`<img src="${x[3]||''}" onerror="this.style.display='none'"><div class="feature-body"><h3>${x[2]} ${x[0]}</h3><p>${x[1]}</p></div>`;f.appendChild(d)});
+const g=$("galleryGrid");g.innerHTML="";data.gallery.forEach(src=>{let d=document.createElement("div");d.className="feature";d.innerHTML=`<img src="${src}" style="width:100%;height:220px;object-fit:cover">`;g.appendChild(d)});
+}
+function openEditor(){
+$("eName").value=data.name;$("eHero").value=data.hero;$("eAbout").value=data.about;$("ePop").value=data.pop;$("eHomes").value=data.homes;$("eQuote").value=data.quote;
+const fe=$("featureEditor");fe.innerHTML="";
+data.features.forEach((x,i)=>{fe.insertAdjacentHTML("beforeend",`<div class="editbox"><label>Title</label><input data-f="${i}" data-k="0" value="${esc(x[0])}"><label>Description</label><textarea data-f="${i}" data-k="1">${esc(x[1])}</textarea><label>Photo</label><div class="photo"><img id="fp${i}" src="${x[3]||''}"><input type="file" accept="image/*" onchange="photoFeature(${i},this)"></div></div>`)});
+renderGalleryEditor();$("editor").style.display="block";
+}
+function renderGalleryEditor(){const ge=$("galleryEditor");ge.innerHTML="";data.gallery.forEach((src,i)=>ge.insertAdjacentHTML("beforeend",`<div class="photo editbox"><img src="${src}"><div><input type="file" accept="image/*" onchange="photoGallery(${i},this)"><button onclick="removeGallery(${i})">Remove</button></div></div>`))}
+function esc(s){return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;")}
+function photoFeature(i,input){const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{data.features[i][3]=r.result;$("fp"+i).src=r.result};r.readAsDataURL(file)}
+function photoGallery(i,input){const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{data.gallery[i]=r.result;renderGalleryEditor()};r.readAsDataURL(file)}
+function addGallery(){data.gallery.push("");renderGalleryEditor()}
+function removeGallery(i){data.gallery.splice(i,1);renderGalleryEditor()}
+function saveSite(){
+data.name=$("eName").value;data.hero=$("eHero").value;data.about=$("eAbout").value;data.pop=$("ePop").value;data.homes=$("eHomes").value;data.quote=$("eQuote").value;
+document.querySelectorAll("[data-f]").forEach(el=>data.features[+el.dataset.f][+el.dataset.k]=el.value);
+localStorage.setItem("khumanparSite",JSON.stringify(data));render();closeEditor();alert("Changes saved on this browser.");
+}
+function closeEditor(){$("editor").style.display="none"}
+function resetSite(){if(confirm("Reset the website to the original version?")){data=structuredClone(defaults);localStorage.setItem("khumanparSite",JSON.stringify(data));render();openEditor()}}
+render();
+</script>
 </body>
 </html>
-
