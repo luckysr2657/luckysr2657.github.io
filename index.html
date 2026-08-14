@@ -404,7 +404,42 @@ section {
 .contact p {
     max-width: 700px;
     margin: 0 auto;
+}/* FINAL SECTION LAYOUT FIX */
+
+#location,
+#info,
+.contact {
+    width: 100%;
+    display: block;
+    grid-column: 1 / -1;
+    box-sizing: border-box;
 }
+
+#location {
+    display: block;
+}
+
+#info {
+    display: block;
+}
+
+.contact {
+    display: block;
+}
+
+.location-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+  
   </style>
 </head>
 
@@ -589,7 +624,7 @@ section {
 </div>
 
 
-
+<div class="bottom-sections">
   <!-- LOCATION -->
   <section id="location">
 
@@ -691,8 +726,7 @@ section {
     </p>
 
   </section>
-
-
+  </div>
   <!-- FOOTER -->
 
   <footer>
