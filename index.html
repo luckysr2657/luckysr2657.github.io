@@ -368,7 +368,43 @@
       section {
         padding: 60px 5%;
       }
-    }
+    /* FIX MAIN PAGE LAYOUT */
+
+section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.location-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.info {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.contact {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+}
+
+.contact p {
+    max-width: 700px;
+    margin: 0 auto;
+}
   </style>
 </head>
 
