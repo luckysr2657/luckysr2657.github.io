@@ -1,745 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Khumanpur Village | Aspur, Dungarpur, Rajasthan</title>
+<title>Khumampur Village</title>
 
-  <meta name="description"
-        content="Official village information website for Khumanpur, Aspur, Dungarpur, Rajasthan. Explore village life, nature, photos and location.">
+<style>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #24352b;
-      background: #f7f5ed;
-    }
-
-    /* NAVIGATION */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #123d2a;
-      padding: 14px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-    }
-
-    .logo {
-      color: white;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-links a:hover {
-      color: #f2c15b;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 50px 20px;
-
-      background:
-        linear-gradient(rgba(10,55,35,0.75), rgba(10,55,35,0.75)),
-        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      color: white;
-    }
-
-    .location-badge {
-      display: inline-block;
-      background: #f0b94f;
-      color: #173725;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 9vw, 6.5rem);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .hero-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 25px;
-      background: #f0b94f;
-      color: #173725;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .hero-button:hover {
-      background: #ffd36b;
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 80px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #155333;
-      margin-bottom: 12px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #66766c;
-      max-width: 750px;
-      margin: 0 auto 45px;
-      font-size: 1.1rem;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #fffdf7;
-    }
-
-    .about-container {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    }
-
-    .about-text h3 {
-      font-size: 2rem;
-      color: #155333;
-      margin-bottom: 15px;
-    }
-
-    .about-text p {
-      margin-bottom: 15px;
-      color: #526259;
-    }
-
-    /* HIGHLIGHTS */
-
-    .highlights {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .highlight-card {
-      background: white;
-      padding: 30px 20px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .highlight-card .icon {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-
-    .highlight-card h3 {
-      color: #155333;
-      margin-bottom: 8px;
-    }
-
-    /* GALLERY */
-
-    .gallery {
-      background: #edf3eb;
-    }
-
-    .gallery-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .gallery-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .gallery-card p {
-      padding: 15px;
-      text-align: center;
-      font-weight: bold;
-      color: #155333;
-    }
-
-    /* LOCATION */
-
-    .location-container {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .location-box {
-      background: white;
-      padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .location-box h3 {
-      font-size: 2rem;
-      color: #155333;
-      margin-bottom: 15px;
-    }
-
-    .location-box p {
-      margin-bottom: 20px;
-      color: #5d6b62;
-    }
-
-    .map-button {
-      display: inline-block;
-      background: #155333;
-      color: white;
-      padding: 13px 22px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .map-button:hover {
-      background: #207447;
-    }
-
-    /* INFORMATION */
-
-    .info {
-      background: #fffdf7;
-    }
-
-    .info-grid {
-      max-width: 1000px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .info-card {
-      background: #f0f5ee;
-      padding: 25px;
-      border-radius: 12px;
-    }
-
-    .info-card strong {
-      color: #155333;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #123d2a;
-      color: white;
-      text-align: center;
-    }
-
-    .contact .section-title {
-      color: white;
-    }
-
-    .contact p {
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #09291c;
-      color: #cddbd2;
-      text-align: center;
-      padding: 25px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .about-container {
-        grid-template-columns: 1fr;
-      }
-
-      .highlights {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 80vh;
-      }
-
-      section {
-        padding: 60px 5%;
-      }
-    /* FIX MAIN PAGE LAYOUT */
-
-section {
-    width: 100%;
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.location-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f6ef;
+    color: #153533;
+    line-height: 1.6;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #123d2a;
+    padding: 14px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.logo {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    text-align: center;
+    padding: 45px 5% 30px;
+}
+
+.hero h1 {
+    color: #07543f;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+
+/* ================= PHOTOS ================= */
+
+.gallery {
+    padding: 20px 5% 45px;
+}
+
+.gallery-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.gallery-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card p {
+    padding: 12px;
+    text-align: center;
+
+    font-weight: bold;
+    color: #153533;
+}
+
+
+/* ================= THREE MAIN COLUMNS ================= */
+
+.main-sections {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    align-items: stretch;
+}
+
+
+/* ================= LOCATION ================= */
+
+.location {
+    padding: 45px 25px;
+
+    text-align: center;
+    background: #f1f6ef;
+}
+
+.location h2,
+.info h2 {
+    color: #07543f;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.location-box {
+    background: white;
+
+    max-width: 330px;
+    margin: auto;
+
+    padding: 30px 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+}
+
+.location-box h3 {
+    color: #07543f;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.location-box p {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.map-button {
+    display: inline-block;
+
+    background: #07543f;
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.map-button:hover {
+    background: #053d2f;
+}
+
+
+/* ================= INFORMATION ================= */
 
 .info {
-    width: 100%;
-    box-sizing: border-box;
+    background: #fffdf7;
+
+    padding: 45px 25px;
+
+    text-align: center;
 }
 
 .info-grid {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 25px auto 0;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+
+    gap: 15px;
 }
 
-.contact {
-    width: 100%;
-    box-sizing: border-box;
+.info-card {
+    background: #eef4ed;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    min-height: 85px;
+}
+
+.info-card strong {
     display: block;
+
+    color: #07543f;
+
+    font-size: 0.85rem;
+
+    margin-bottom: 4px;
+}
+
+.info-card span {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+
+/* ================= ABOUT ================= */
+
+.contact {
+    background: #123d2a;
+
+    color: white;
+
+    padding: 45px 30px;
+
     text-align: center;
+}
+
+.contact h2 {
+    color: white;
+
+    font-size: 1.8rem;
+
+    margin-bottom: 20px;
 }
 
 .contact p {
-    max-width: 700px;
-    margin: 0 auto;
-}/* FINAL SECTION LAYOUT FIX */
+    max-width: 400px;
 
-#location,
-#info,
-.contact {
+    margin: auto;
+
+    font-size: 0.9rem;
+
+    color: white;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
     width: 100%;
-    display: block;
-    grid-column: 1 / -1;
-    box-sizing: border-box;
+
+    background: #09291f;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
 }
 
-#location {
-    display: block;
+footer p {
+    font-size: 0.8rem;
+    margin: 5px 0;
 }
 
-#info {
-    display: block;
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .main-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .location,
+    .info,
+    .contact {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
 }
 
-.contact {
-    display: block;
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .location,
+    .info,
+    .contact {
+        padding: 35px 20px;
+    }
 }
 
-.location-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.info-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-
-  
-  </style>
+</style>
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
 
-  <nav>
-    <a href="#home" class="logo">Khumanpur</a>
+<nav>
+
+    <a href="#home" class="logo">
+        Khumanpur
+    </a>
 
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Photos</a></li>
-      <li><a href="#location">Location</a></li>
-      <li><a href="#info">Information</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#info">Information</a></li>
+        <li><a href="#about">About</a></li>
     </ul>
-  </nav>
+
+</nav>
 
 
-  <!-- HERO -->
+<!-- ================= HERO ================= -->
 
-  <header class="hero" id="home">
+<section class="hero" id="home">
 
-    <div class="hero-content">
+    <h1>Khumampur Village</h1>
 
-      <div class="location-badge">
-        मेड़तिया राठौड़
-      </div>
-
-      <h1>Khumanpur</h1>
-
-      <p>
-        Welcome to Khumanpur ~ a proud Rajput village of the Medatiya Rathod Family, 
-        surrounded by the natural beauty, rich culture, and peaceful rural life of Rajasthan.
-        culture and peaceful rural life of Rajasthan.
-      </p>
-
-      <a href="#about" class="hero-button">
-        Explore Khumanpur
-      </a>
-
-    </div>
-
-  </header>
-
-
-  <!-- ABOUT -->
-
-  <section class="about" id="about">
-
-    <h2 class="section-title">
-      About Khumanpur
-    </h2>
-
-    <p class="section-subtitle">
-      Discover the village, its people, surroundings and way of life.
+    <p>
+        Real photographs and information about Khumanpur village.
     </p>
 
-    <div class="about-container">
-
-      <img
-        class="about-image"
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
-        alt="Village landscape">
-
-      <div class="about-text">
-
-        <h3>Welcome to Khumanpur Village</h3>
-
-        <p>
-          Khumanpur is a beautiful and peaceful village known for its strong sense of unity,
-          togetherness, and community spirit. The people of Khumanpur are friendly,
-          supportive, and always come together to celebrate important occasions and festivals.
-        </p>
-
-        <p>
-          One of the most respected and important places in our village is the Kala Rathod
-          Temple, which holds a special place in the hearts of the villagers and reflects our faith
-          and traditions. Khumanpur is also blessed with beautiful natural surroundings. 
-          A large pond (talab) is located near the village, adding to its peaceful and scenic environment.
-          Agriculture is an important part of village life, and our farmers work hard throughout the year,
-          growing different crops according to the seasons.
-        </p>
-
-          Festivals are celebrated with great joy and enthusiasm in Khumanpur. Ganesh
-          Chaturthi, Diwali, and Holi are celebrated especially with the participation of people
-          from across the village. These celebrations strengthen our relationships and preserve
-          our rich traditions and culture. Khumanpur is not just a village; it is a community built on unity,
-          tradition, nature, and togetherness. We are proud of our village and its people, and we warmly
-          welcome everyone to learn more about the beauty, culture, and spirit of Khumanpur.
-
-        <p>
-          More local information, history and photographs can be added
-          here as the website grows.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- HIGHLIGHTS -->
+<!-- ================= PHOTOS ================= -->
 
-  <section>
-
-    <h2 class="section-title">
-      Village Highlights
-    </h2>
-
-    <p class="section-subtitle">
-      Some of the things that make village life special.
-    </p>
-
-    <div class="highlights">
-
-      <div class="highlight-card">
-        <div class="icon">🌳</div>
-        <h3>Nature</h3>
-        <p>
-          Enjoy the greenery and peaceful surroundings of rural Rajasthan.
-        </p>
-      </div>
-
-      <div class="highlight-card">
-        <div class="icon">🏘️</div>
-        <h3>Village Life</h3>
-        <p>
-          Experience the simple and welcoming character of village life.
-        </p>
-      </div>
-
-      <div class="highlight-card">
-        <div class="icon">🤝</div>
-        <h3>Community</h3>
-        <p>
-          A place where families, neighbours and traditions bring people together.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- GALLERY -->
-
-  <section class="gallery" id="gallery">
-
-    <h2 class="section-title">
-      Khumanpur Photos
-    </h2>
-
-    <p class="section-subtitle">
-      Real photographs of Khumanpur can be added here.
-    </p>
+<section class="gallery" id="photos">
 
     <div class="gallery-grid">
 
-      <div class="gallery-card">
-        <img
-          src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
-          alt="Khumanpur village view">
-        <p>Village View</p>
-      </div>
+        <div class="gallery-card">
 
-      <div class="gallery-card">
-        <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=85"
-          alt="Natural landscape">
-        <p>Nature & Landscape</p>
-      </div>
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+                alt="Village View"
+            >
 
-    <div class="gallery-card">
-    <a href="family.html">
-        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=85"
-             alt="Village Family Photos">
-        <p>Village Family Photos</p>
-    </a>
+            <p>Village View</p>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+                alt="Nature and Landscape"
+            >
+
+            <p>Nature &amp; Landscape</p>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85"
+                alt="Village Family Photo"
+            >
+
+            <p>Village Family Photo</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= THREE COLUMNS ================= -->
+
+<div class="main-sections">
+
+
+    <!-- LOCATION -->
+
+    <section class="location" id="location">
+
+        <h2>Where is Khumanpur?</h2>
+
+        <p class="subtitle">
+            Khumanpur is associated with the Aspur area of Dungarpur district,
+            Rajasthan – 314038.
+        </p>
+
+
+        <div class="location-box">
+
+            <h3>📍 Khumanpur, Aspur</h3>
+
+            <p>
+                Dungarpur District, Rajasthan, India
+            </p>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/place/Khumanpur+Rathod+Family/@23.8272798,74.0523932,17.5z"
+                target="_blank"
+                rel="noopener"
+            >
+                Open Khumanpur on Google Maps
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="info" id="info">
+
+        <h2>Village Information</h2>
+
+        <p class="subtitle">
+            Important information can be added here as it is verified.
+        </p>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <strong>Village:</strong>
+                <span>Khumanpur</span>
+            </div>
+
+
+            <div class="info-card">
+                <strong>Area:</strong>
+                <span>Aspur</span>
+            </div>
+
+
+            <div class="info-card">
+                <strong>District:</strong>
+                <span>Dungarpur</span>
+            </div>
+
+
+            <div class="info-card">
+                <strong>State:</strong>
+                <span>Rajasthan</span>
+            </div>
+
+
+            <div class="info-card">
+                <strong>Country:</strong>
+                <span>India</span>
+            </div>
+
+
+            <div class="info-card">
+                <strong>More Information:</strong>
+                <span>
+                    24 Homes and 132 Population of Rathod Family
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="contact" id="about">
+
+        <h2>About This Website</h2>
+
+        <p>
+            This website is dedicated to sharing information,
+            photographs, culture and village life of Khumanpur.
+        </p>
+
+        <br>
+
+        <p>
+            More information will be added as the website
+            develops.
+        </p>
+
+    </section>
+
+
 </div>
 
 
-<div class="bottom-sections">
-  <!-- LOCATION -->
-  <section id="location">
+<!-- ================= FOOTER ================= -->
 
-    <h2 class="section-title">
-      Where is Khumanpur?
-    </h2>
-
-    <p class="section-subtitle">
-      Khumanpur is associated with the Aspur area of Dungarpur district,
-      Rajasthan ~ 314038.
-    </p>
-
-    <div class="location-container">
-
-      <div class="location-box">
-
-        <h3>📍 Khumanpur, Aspur</h3>
-
-        <p>
-          Dungarpur District, Rajasthan, India
-        </p>
-
-        <a
-          class="map-button"
-          href="https://www.google.com/maps/place/Khumanpur+Rathod+Family/@23.8272798,74.0523932,17.5z/data=!4m14!1m7!3m6!1s0x39671afb6e7d7999:0xcc04b6caf451d870!2sR3J4%2B6V,+Lapaniya,+Rajasthan+314038!3b1!8m2!3d23.8305625!4d74.0571875!3m5!1s0x39671be666dae09f:0x783c94124a24b0f1!8m2!3d23.8258832!4d74.0518712!16s%2Fg%2F11v04pnk0w?entry=ttu&g_ep=EgoyMDI2MDgxMS4wIKXMDSoASAFQAw%3D%3D"
-          target="_blank"
-          rel="noopener">
-          Open Khumanpur on Google Maps
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- INFORMATION -->
-
-  <section class="info" id="info">
-
-    <h2 class="section-title">
-      Village Information
-    </h2>
-
-    <p class="section-subtitle">
-      Important information can be added here as it is verified.
-    </p>
-
-    <div class="info-grid">
-
-      <div class="info-card">
-        <strong>Village:</strong><br>
-        Khumanpur
-      </div>
-
-      <div class="info-card">
-        <strong>Area:</strong><br>
-        Aspur
-      </div>
-
-      <div class="info-card">
-        <strong>District:</strong><br>
-        Dungarpur
-      </div>
-
-      <div class="info-card">
-        <strong>State:</strong><br>
-        Rajasthan
-      </div>
-
-      <div class="info-card">
-        <strong>Country:</strong><br>
-        India
-      </div>
-
-      <div class="info-card">
-        <strong>More information:</strong><br>
-        24 Homes and 132 Population of Rathod Family
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section class="contact">
-
-    <h2 class="section-title">
-      About This Website
-    </h2>
+<footer>
 
     <p>
-      This website is dedicated to sharing information, photographs,
-      culture and village life of Khumanpur.
-      More information will be added as the website developer Lokendra Singh Rathod.
-    </p>
-
-  </section>
-  </div>
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>
-      © 2026 Khumanpur| All Rights Reserved.
+        © 2026 Khumanpur | All Rights Reserved.
     </p>
 
     <p>
-      Khumanpur · Aspur · Dungarpur · Rajasthan
+        Khumanpur · Aspur · Dungarpur · Rajasthan
     </p>
 
-  </footer>
+</footer>
+
 
 </body>
 </html>
