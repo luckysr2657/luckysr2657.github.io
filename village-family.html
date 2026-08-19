@@ -1,0 +1,166 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Village Family Photos - Khumanpur</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef5ec;
+      color: #064d35;
+    }
+
+    .top-line {
+      height: 6px;
+      background: #064d35;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 35px 25px 60px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 42px;
+      margin: 5px 0 10px;
+      color: #07583b;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 19px;
+      color: #55746a;
+      margin-bottom: 40px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 22px;
+      background: #07583b;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background: #043d2a;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      align-items: start;
+    }
+
+    .photo-card {
+      background: white;
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 700px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .photo-name {
+      text-align: center;
+      font-size: 17px;
+      font-weight: bold;
+      color: #07583b;
+      padding: 12px 5px 5px;
+    }
+
+    @media (max-width: 1000px) {
+      .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .page {
+        padding: 25px 15px 40px;
+      }
+
+      .page-title {
+        font-size: 32px;
+      }
+
+      .page-subtitle {
+        font-size: 17px;
+      }
+
+      .photo-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-line"></div>
+
+  <main class="page">
+
+    <a href="index.html#photos" class="back-button">
+      ← Back to Khumanpur Photos
+    </a>
+
+    <h1 class="page-title">Village Family Photos</h1>
+
+    <p class="page-subtitle">
+      Memories, families and special moments of Khumanpur
+    </p>
+
+    <div class="photo-gallery">
+
+      <div class="photo-card">
+        <img
+          src="village-family.jpeg"
+          alt="Khumanpur Village Family Photo">
+        <div class="photo-name">
+          Village Family Photo
+        </div>
+      </div>
+
+      <!-- Add more photos below -->
+
+      <!--
+      <div class="photo-card">
+        <img
+          src="family2.jpeg"
+          alt="Khumanpur Family Photo">
+        <div class="photo-name">
+          Family Photo
+        </div>
+      </div>
+      -->
+
+    </div>
+
+  </main>
+
+</body>
+</html>
+```
